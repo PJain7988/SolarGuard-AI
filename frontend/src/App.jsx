@@ -9,6 +9,7 @@ import Experiments from './features/models/Experiments';
 import DatasetManager from './features/dataset/DatasetManager';
 import AIAssistant from './features/assistant/AIAssistant';
 import Settings from './features/settings/Settings';
+import Reports from './features/reports/Reports';
 import Login from './features/auth/Login';
 import { ThemeProvider, useTheme } from './context/ThemeProvider';
 
@@ -86,7 +87,7 @@ function AppContent({ onLogout }) {
           <Route path="/models" element={<ModelPerformance />} />
           <Route path="/experiments" element={<Experiments />} />
           <Route path="/dataset" element={<DatasetManager />} />
-          <Route path="/reports" element={<div className="p-8 text-center text-muted-foreground">Reports Module Coming Soon</div>} />
+          <Route path="/reports" element={<Reports />} />
           <Route path="/settings" element={<Settings />} />
         </Routes>
       </main>

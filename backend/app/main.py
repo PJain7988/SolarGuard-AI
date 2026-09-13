@@ -1,7 +1,7 @@
 from fastapi import FastAPI, UploadFile, File, HTTPException, Depends
 from fastapi.middleware.cors import CORSMiddleware
 from app.ml.inference.predictor import MLPredictor
-from app.api import auth, dashboard, inspection, models, datasets, settings
+from app.api import auth, dashboard, inspection, models, datasets, settings, reports
 from app.database.connection import connect_to_mongo, close_mongo_connection, get_database
 import os
 
@@ -41,6 +41,7 @@ app.include_router(inspection.router, prefix="/api/inspection", tags=["Inspectio
 app.include_router(models.router, prefix="/api/models", tags=["Models"])
 app.include_router(datasets.router, prefix="/api/datasets", tags=["Datasets"])
 app.include_router(settings.router, prefix="/api/settings", tags=["Settings"])
+app.include_router(reports.router, prefix="/api/reports", tags=["Reports"])
 
 # Global Predictor Instance
 # Assuming model is stored in a known path
