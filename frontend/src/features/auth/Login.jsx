@@ -19,7 +19,7 @@ export default function Login({ onLogin }) {
       formData.append('username', username);
       formData.append('password', password);
 
-      const response = await axios.post('http://localhost:8000/api/auth/login', formData, {
+      const response = await axios.post('https://solarguard-ai-7gw9.onrender.com/api/auth/login', formData, {
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
       });
 

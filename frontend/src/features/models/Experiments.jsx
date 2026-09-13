@@ -18,7 +18,7 @@ export default function Experiments() {
 
   const fetchExperiments = async () => {
     try {
-      const response = await axios.get(`http://localhost:8000/api/models/experiments?t=${Date.now()}`);
+      const response = await axios.get(`https://solarguard-ai-7gw9.onrender.com/api/models/experiments?t=${Date.now()}`);
       setExperiments(response.data.experiments);
     } catch (error) {
       console.error("Failed to fetch experiments:", error);
@@ -37,7 +37,7 @@ export default function Experiments() {
     e.preventDefault();
     setSubmitting(true);
     try {
-      await axios.post('http://localhost:8000/api/models/experiments', newRun);
+      await axios.post('https://solarguard-ai-7gw9.onrender.com/api/models/experiments', newRun);
       setShowModal(false);
       fetchExperiments();
     } catch (error) {

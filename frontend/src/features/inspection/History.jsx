@@ -13,7 +13,7 @@ export default function History() {
   useEffect(() => {
     const fetchHistory = async () => {
       try {
-        const response = await fetch(`http://localhost:8000/api/inspection/history?t=${Date.now()}`);
+        const response = await fetch(`https://solarguard-ai-7gw9.onrender.com/api/inspection/history?t=${Date.now()}`);
         const data = await response.json();
         if (Array.isArray(data)) {
           setHistory(data);

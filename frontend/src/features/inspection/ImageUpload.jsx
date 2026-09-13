@@ -74,7 +74,7 @@ export default function ImageUpload() {
     try {
       // Add artificial delay to show off the scanning animation
       await new Promise(r => setTimeout(r, 1500));
-      const response = await axios.post('http://localhost:8000/api/inspection/predict', formData, {
+      const response = await axios.post('https://solarguard-ai-7gw9.onrender.com/api/inspection/predict', formData, {
         headers: { 'Content-Type': 'multipart/form-data' }
       });
       setResult(response.data);

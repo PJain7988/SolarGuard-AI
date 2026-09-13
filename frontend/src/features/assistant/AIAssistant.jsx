@@ -18,7 +18,7 @@ export default function AIAssistant() {
     setIsLoading(true);
 
     try {
-      const response = await axios.post('http://localhost:8000/api/assistant/query', {
+      const response = await axios.post('https://solarguard-ai-7gw9.onrender.com/api/assistant/query', {
         query: userMessage.content
       });
       

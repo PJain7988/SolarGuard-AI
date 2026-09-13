@@ -15,7 +15,7 @@ export default function Settings() {
 
   const fetchSettings = async () => {
     try {
-      const response = await axios.get('http://localhost:8000/api/settings');
+      const response = await axios.get('https://solarguard-ai-7gw9.onrender.com/api/settings');
       setSettings(response.data.settings);
     } catch (error) {
       console.error('Failed to fetch settings:', error);
@@ -27,7 +27,7 @@ export default function Settings() {
   const handleSave = async () => {
     setSaving(true);
     try {
-      await axios.put('http://localhost:8000/api/settings', settings);
+      await axios.put('https://solarguard-ai-7gw9.onrender.com/api/settings', settings);
       setShowToast(true);
       setTimeout(() => setShowToast(false), 3000);
     } catch (error) {

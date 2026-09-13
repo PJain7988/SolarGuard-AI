@@ -11,7 +11,7 @@ export default function ModelPerformance() {
   const fetchPerformanceData = async () => {
     setLoading(true);
     try {
-      const response = await axios.get(`http://localhost:8000/api/models/performance?t=${Date.now()}`);
+      const response = await axios.get(`https://solarguard-ai-7gw9.onrender.com/api/models/performance?t=${Date.now()}`);
       setData(response.data);
     } catch (error) {
       console.error("Failed to fetch model performance:", error);

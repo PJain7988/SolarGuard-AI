@@ -20,7 +20,7 @@ export default function DatasetManager() {
   const fetchDatasetStats = async () => {
     setLoading(true);
     try {
-      const response = await axios.get(`http://localhost:8000/api/datasets/stats?t=${Date.now()}`);
+      const response = await axios.get(`https://solarguard-ai-7gw9.onrender.com/api/datasets/stats?t=${Date.now()}`);
       setData(response.data);
     } catch (error) {
       console.error("Failed to fetch dataset stats:", error);
