@@ -5,7 +5,7 @@ import random
 
 router = APIRouter()
 
-@router.get("/")
+@router.get("")
 async def get_reports_summary() -> Dict:
     # Generate mock data for the reports dashboard
     today = datetime.now()

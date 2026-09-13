@@ -22,11 +22,11 @@ class SettingsUpdate(BaseModel):
     system_theme: str = None
     ml_engine: str = None
 
-@router.get("/")
+@router.get("")
 async def get_settings() -> Dict:
     return {"status": "success", "settings": GLOBAL_SETTINGS}
 
-@router.put("/")
+@router.put("")
 async def update_settings(updates: SettingsUpdate) -> Dict:
     global GLOBAL_SETTINGS
     
