@@ -123,6 +123,16 @@ export default function Reports() {
                         </td>
                         <td className="p-4 text-right">
                           <button 
+                            onClick={() => {
+                              const content = `SolarGuard AI Telemetry Report\nReport ID: ${report.id}\nType: ${report.status}\nDate: ${report.date}\nStatus: Verified\n\nAutomated analysis indicates standard hardware behavior.`;
+                              const blob = new Blob([content], { type: 'text/plain' });
+                              const url = window.URL.createObjectURL(blob);
+                              const a = document.createElement('a');
+                              a.href = url;
+                              a.download = `SolarGuard_${report.id}.txt`;
+                              a.click();
+                              window.URL.revokeObjectURL(url);
+                            }}
                             className="bg-primary/10 text-primary p-2 rounded-lg hover:bg-primary hover:text-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                             disabled={report.status === 'Processing'}
                           >
